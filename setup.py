@@ -3,7 +3,7 @@
 """
     phishingapi
 
-    Easily and directly scan and block phishing security threats in input.  # noqa: E501
+    
 
     OpenAPI spec version: v1
     
@@ -45,6 +45,6 @@ setup(
     include_package_data=True,
     long_description=long_description,
     long_description_content_type='text/markdown'
-    Easily and directly scan and block phishing security threats in input.  # noqa: E501
+    
 
 )
