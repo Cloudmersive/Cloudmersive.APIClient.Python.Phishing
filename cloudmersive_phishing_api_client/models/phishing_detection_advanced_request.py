@@ -32,25 +32,70 @@ class PhishingDetectionAdvancedRequest(object):
     """
     swagger_types = {
         'input_string': 'str',
-        'model': 'str'
+        'model': 'str',
+        'custom_policy_id': 'str',
+        'provide_analysis_rationale': 'bool',
+        'text_type': 'str',
+        'from_name': 'str',
+        'to_name': 'str',
+        'from_phone_number': 'str',
+        'to_phone_number': 'str',
+        'from_email_address': 'str',
+        'to_email_address': 'str'
     }
 
     attribute_map = {
         'input_string': 'InputString',
-        'model': 'Model'
+        'model': 'Model',
+        'custom_policy_id': 'CustomPolicyID',
+        'provide_analysis_rationale': 'ProvideAnalysisRationale',
+        'text_type': 'TextType',
+        'from_name': 'FromName',
+        'to_name': 'ToName',
+        'from_phone_number': 'FromPhoneNumber',
+        'to_phone_number': 'ToPhoneNumber',
+        'from_email_address': 'FromEmailAddress',
+        'to_email_address': 'ToEmailAddress'
     }
 
-    def __init__(self, input_string=None, model=None):  # noqa: E501
+    def __init__(self, input_string=None, model=None, custom_policy_id=None, provide_analysis_rationale=None, text_type=None, from_name=None, to_name=None, from_phone_number=None, to_phone_number=None, from_email_address=None, to_email_address=None):  # noqa: E501
         """PhishingDetectionAdvancedRequest - a model defined in Swagger"""  # noqa: E501
 
         self._input_string = None
         self._model = None
+        self._custom_policy_id = None
+        self._provide_analysis_rationale = None
+        self._text_type = None
+        self._from_name = None
+        self._to_name = None
+        self._from_phone_number = None
+        self._to_phone_number = None
+        self._from_email_address = None
+        self._to_email_address = None
         self.discriminator = None
 
         if input_string is not None:
             self.input_string = input_string
         if model is not None:
             self.model = model
+        if custom_policy_id is not None:
+            self.custom_policy_id = custom_policy_id
+        if provide_analysis_rationale is not None:
+            self.provide_analysis_rationale = provide_analysis_rationale
+        if text_type is not None:
+            self.text_type = text_type
+        if from_name is not None:
+            self.from_name = from_name
+        if to_name is not None:
+            self.to_name = to_name
+        if from_phone_number is not None:
+            self.from_phone_number = from_phone_number
+        if to_phone_number is not None:
+            self.to_phone_number = to_phone_number
+        if from_email_address is not None:
+            self.from_email_address = from_email_address
+        if to_email_address is not None:
+            self.to_email_address = to_email_address
 
     @property
     def input_string(self):
@@ -97,6 +142,213 @@ class PhishingDetectionAdvancedRequest(object):
         """
 
         self._model = model
+
+    @property
+    def custom_policy_id(self):
+        """Gets the custom_policy_id of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Apply a Custom Policy for Phishing Enforcement by providing the ID; to create a Custom Policy,  navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud  # noqa: E501
+
+        :return: The custom_policy_id of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_policy_id
+
+    @custom_policy_id.setter
+    def custom_policy_id(self, custom_policy_id):
+        """Sets the custom_policy_id of this PhishingDetectionAdvancedRequest.
+
+        Apply a Custom Policy for Phishing Enforcement by providing the ID; to create a Custom Policy,  navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud  # noqa: E501
+
+        :param custom_policy_id: The custom_policy_id of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._custom_policy_id = custom_policy_id
+
+    @property
+    def provide_analysis_rationale(self):
+        """Gets the provide_analysis_rationale of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: Set to true to include an analysis rationale in the response explaining why the content was or was not flagged.  Default is true.  # noqa: E501
+
+        :return: The provide_analysis_rationale of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._provide_analysis_rationale
+
+    @provide_analysis_rationale.setter
+    def provide_analysis_rationale(self, provide_analysis_rationale):
+        """Sets the provide_analysis_rationale of this PhishingDetectionAdvancedRequest.
+
+        Optional: Set to true to include an analysis rationale in the response explaining why the content was or was not flagged.  Default is true.  # noqa: E501
+
+        :param provide_analysis_rationale: The provide_analysis_rationale of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._provide_analysis_rationale = provide_analysis_rationale
+
+    @property
+    def text_type(self):
+        """Gets the text_type of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: Type of text being analyzed. Must be one of: \"Text Message\", \"User Message\", \"Sales Lead\", \"Email Message\", \"Support Case\", \"Other\".  # noqa: E501
+
+        :return: The text_type of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._text_type
+
+    @text_type.setter
+    def text_type(self, text_type):
+        """Sets the text_type of this PhishingDetectionAdvancedRequest.
+
+        Optional: Type of text being analyzed. Must be one of: \"Text Message\", \"User Message\", \"Sales Lead\", \"Email Message\", \"Support Case\", \"Other\".  # noqa: E501
+
+        :param text_type: The text_type of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._text_type = text_type
+
+    @property
+    def from_name(self):
+        """Gets the from_name of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: Name of the sender  # noqa: E501
+
+        :return: The from_name of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._from_name
+
+    @from_name.setter
+    def from_name(self, from_name):
+        """Sets the from_name of this PhishingDetectionAdvancedRequest.
+
+        Optional: Name of the sender  # noqa: E501
+
+        :param from_name: The from_name of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._from_name = from_name
+
+    @property
+    def to_name(self):
+        """Gets the to_name of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: Name of the recipient  # noqa: E501
+
+        :return: The to_name of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._to_name
+
+    @to_name.setter
+    def to_name(self, to_name):
+        """Sets the to_name of this PhishingDetectionAdvancedRequest.
+
+        Optional: Name of the recipient  # noqa: E501
+
+        :param to_name: The to_name of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._to_name = to_name
+
+    @property
+    def from_phone_number(self):
+        """Gets the from_phone_number of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: Phone number of the sender  # noqa: E501
+
+        :return: The from_phone_number of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._from_phone_number
+
+    @from_phone_number.setter
+    def from_phone_number(self, from_phone_number):
+        """Sets the from_phone_number of this PhishingDetectionAdvancedRequest.
+
+        Optional: Phone number of the sender  # noqa: E501
+
+        :param from_phone_number: The from_phone_number of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._from_phone_number = from_phone_number
+
+    @property
+    def to_phone_number(self):
+        """Gets the to_phone_number of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: Phone number of the recipient  # noqa: E501
+
+        :return: The to_phone_number of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._to_phone_number
+
+    @to_phone_number.setter
+    def to_phone_number(self, to_phone_number):
+        """Sets the to_phone_number of this PhishingDetectionAdvancedRequest.
+
+        Optional: Phone number of the recipient  # noqa: E501
+
+        :param to_phone_number: The to_phone_number of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._to_phone_number = to_phone_number
+
+    @property
+    def from_email_address(self):
+        """Gets the from_email_address of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: Email address of the sender  # noqa: E501
+
+        :return: The from_email_address of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._from_email_address
+
+    @from_email_address.setter
+    def from_email_address(self, from_email_address):
+        """Sets the from_email_address of this PhishingDetectionAdvancedRequest.
+
+        Optional: Email address of the sender  # noqa: E501
+
+        :param from_email_address: The from_email_address of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._from_email_address = from_email_address
+
+    @property
+    def to_email_address(self):
+        """Gets the to_email_address of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: Email address of the recipient  # noqa: E501
+
+        :return: The to_email_address of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._to_email_address
+
+    @to_email_address.setter
+    def to_email_address(self, to_email_address):
+        """Sets the to_email_address of this PhishingDetectionAdvancedRequest.
+
+        Optional: Email address of the recipient  # noqa: E501
+
+        :param to_email_address: The to_email_address of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._to_email_address = to_email_address
 
     def to_dict(self):
         """Returns the model properties as a dict"""

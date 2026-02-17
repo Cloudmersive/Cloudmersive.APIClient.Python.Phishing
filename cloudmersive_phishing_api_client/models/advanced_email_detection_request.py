@@ -37,6 +37,7 @@ class AdvancedEmailDetectionRequest(object):
         'html_body': 'str',
         'allow_low_reputation_senders': 'bool',
         'allow_sanctioned': 'bool',
+        'custom_policy_id': 'str',
         'input_email_file': 'str'
     }
 
@@ -47,10 +48,11 @@ class AdvancedEmailDetectionRequest(object):
         'html_body': 'HtmlBody',
         'allow_low_reputation_senders': 'AllowLowReputationSenders',
         'allow_sanctioned': 'AllowSanctioned',
+        'custom_policy_id': 'CustomPolicyID',
         'input_email_file': 'InputEmailFile'
     }
 
-    def __init__(self, from_email_address=None, to_email_address=None, subject=None, html_body=None, allow_low_reputation_senders=None, allow_sanctioned=None, input_email_file=None):  # noqa: E501
+    def __init__(self, from_email_address=None, to_email_address=None, subject=None, html_body=None, allow_low_reputation_senders=None, allow_sanctioned=None, custom_policy_id=None, input_email_file=None):  # noqa: E501
         """AdvancedEmailDetectionRequest - a model defined in Swagger"""  # noqa: E501
 
         self._from_email_address = None
@@ -59,6 +61,7 @@ class AdvancedEmailDetectionRequest(object):
         self._html_body = None
         self._allow_low_reputation_senders = None
         self._allow_sanctioned = None
+        self._custom_policy_id = None
         self._input_email_file = None
         self.discriminator = None
 
@@ -74,6 +77,8 @@ class AdvancedEmailDetectionRequest(object):
             self.allow_low_reputation_senders = allow_low_reputation_senders
         if allow_sanctioned is not None:
             self.allow_sanctioned = allow_sanctioned
+        if custom_policy_id is not None:
+            self.custom_policy_id = custom_policy_id
         if input_email_file is not None:
             self.input_email_file = input_email_file
 
@@ -216,9 +221,33 @@ class AdvancedEmailDetectionRequest(object):
         self._allow_sanctioned = allow_sanctioned
 
     @property
+    def custom_policy_id(self):
+        """Gets the custom_policy_id of this AdvancedEmailDetectionRequest.  # noqa: E501
+
+        Apply a Custom Policy for Phishing Enforcement by providing the ID; to create a Custom Policy,  navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud  # noqa: E501
+
+        :return: The custom_policy_id of this AdvancedEmailDetectionRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_policy_id
+
+    @custom_policy_id.setter
+    def custom_policy_id(self, custom_policy_id):
+        """Sets the custom_policy_id of this AdvancedEmailDetectionRequest.
+
+        Apply a Custom Policy for Phishing Enforcement by providing the ID; to create a Custom Policy,  navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud  # noqa: E501
+
+        :param custom_policy_id: The custom_policy_id of this AdvancedEmailDetectionRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._custom_policy_id = custom_policy_id
+
+    @property
     def input_email_file(self):
         """Gets the input_email_file of this AdvancedEmailDetectionRequest.  # noqa: E501
 
+        Optional: Input email file bytes (EML, PDF, etc.).  If not provided, HtmlBody will be used instead.  # noqa: E501
 
         :return: The input_email_file of this AdvancedEmailDetectionRequest.  # noqa: E501
         :rtype: str
@@ -229,6 +258,7 @@ class AdvancedEmailDetectionRequest(object):
     def input_email_file(self, input_email_file):
         """Sets the input_email_file of this AdvancedEmailDetectionRequest.
 
+        Optional: Input email file bytes (EML, PDF, etc.).  If not provided, HtmlBody will be used instead.  # noqa: E501
 
         :param input_email_file: The input_email_file of this AdvancedEmailDetectionRequest.  # noqa: E501
         :type: str

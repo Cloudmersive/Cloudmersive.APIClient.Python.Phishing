@@ -33,20 +33,23 @@ class PhishingDetectionAdvancedResponse(object):
     swagger_types = {
         'clean_result': 'bool',
         'phishing_risk_level': 'float',
+        'confidence_level': 'float',
         'analysis_rationale': 'str'
     }
 
     attribute_map = {
         'clean_result': 'CleanResult',
         'phishing_risk_level': 'PhishingRiskLevel',
+        'confidence_level': 'ConfidenceLevel',
         'analysis_rationale': 'AnalysisRationale'
     }
 
-    def __init__(self, clean_result=None, phishing_risk_level=None, analysis_rationale=None):  # noqa: E501
+    def __init__(self, clean_result=None, phishing_risk_level=None, confidence_level=None, analysis_rationale=None):  # noqa: E501
         """PhishingDetectionAdvancedResponse - a model defined in Swagger"""  # noqa: E501
 
         self._clean_result = None
         self._phishing_risk_level = None
+        self._confidence_level = None
         self._analysis_rationale = None
         self.discriminator = None
 
@@ -54,6 +57,8 @@ class PhishingDetectionAdvancedResponse(object):
             self.clean_result = clean_result
         if phishing_risk_level is not None:
             self.phishing_risk_level = phishing_risk_level
+        if confidence_level is not None:
+            self.confidence_level = confidence_level
         if analysis_rationale is not None:
             self.analysis_rationale = analysis_rationale
 
@@ -102,6 +107,29 @@ class PhishingDetectionAdvancedResponse(object):
         """
 
         self._phishing_risk_level = phishing_risk_level
+
+    @property
+    def confidence_level(self):
+        """Gets the confidence_level of this PhishingDetectionAdvancedResponse.  # noqa: E501
+
+        Confidence level between 0.0 and 1.0 where values over 0.9 indicate high confidence  # noqa: E501
+
+        :return: The confidence_level of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :rtype: float
+        """
+        return self._confidence_level
+
+    @confidence_level.setter
+    def confidence_level(self, confidence_level):
+        """Sets the confidence_level of this PhishingDetectionAdvancedResponse.
+
+        Confidence level between 0.0 and 1.0 where values over 0.9 indicate high confidence  # noqa: E501
+
+        :param confidence_level: The confidence_level of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :type: float
+        """
+
+        self._confidence_level = confidence_level
 
     @property
     def analysis_rationale(self):

@@ -136,6 +136,7 @@ class PhishingDetectionApi(object):
 
         :param async_req bool
         :param str model:
+        :param str custom_policy_id:
         :param file input_file:
         :return: PhishingDetectionAdvancedResponse
                  If the method is called asynchronously,
@@ -158,13 +159,14 @@ class PhishingDetectionApi(object):
 
         :param async_req bool
         :param str model:
+        :param str custom_policy_id:
         :param file input_file:
         :return: PhishingDetectionAdvancedResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['model', 'input_file']  # noqa: E501
+        all_params = ['model', 'custom_policy_id', 'input_file']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -189,6 +191,8 @@ class PhishingDetectionApi(object):
         header_params = {}
         if 'model' in params:
             header_params['model'] = params['model']  # noqa: E501
+        if 'custom_policy_id' in params:
+            header_params['customPolicyId'] = params['custom_policy_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -406,6 +410,99 @@ class PhishingDetectionApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='PhishingDetectionAdvancedResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def phishing_detect_url_advanced_post(self, **kwargs):  # noqa: E501
+        """Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.phishing_detect_url_advanced_post(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param AdvancedUrlDetectionRequest body: URL phishing detection request
+        :return: PhishingDetectionUrlAdvancedResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.phishing_detect_url_advanced_post_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.phishing_detect_url_advanced_post_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def phishing_detect_url_advanced_post_with_http_info(self, **kwargs):  # noqa: E501
+        """Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.phishing_detect_url_advanced_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param AdvancedUrlDetectionRequest body: URL phishing detection request
+        :return: PhishingDetectionUrlAdvancedResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method phishing_detect_url_advanced_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/*+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/phishing/detect/url/advanced', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PhishingDetectionUrlAdvancedResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
