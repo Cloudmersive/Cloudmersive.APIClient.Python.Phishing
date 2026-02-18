@@ -32,35 +32,65 @@ class PhishingDetectionAdvancedResponse(object):
     """
     swagger_types = {
         'clean_result': 'bool',
-        'phishing_risk_level': 'float',
+        'contains_phishing': 'bool',
+        'contains_unsolicited_sales': 'bool',
+        'contains_promotional_content': 'bool',
+        'contains_web_urls': 'bool',
+        'contains_phone_numbers': 'bool',
+        'contains_email_addresses': 'bool',
         'confidence_level': 'float',
-        'analysis_rationale': 'str'
+        'analysis_rationale': 'str',
+        'unsafe_urls': 'list[UnsafeUrlResult]'
     }
 
     attribute_map = {
         'clean_result': 'CleanResult',
-        'phishing_risk_level': 'PhishingRiskLevel',
+        'contains_phishing': 'ContainsPhishing',
+        'contains_unsolicited_sales': 'ContainsUnsolicitedSales',
+        'contains_promotional_content': 'ContainsPromotionalContent',
+        'contains_web_urls': 'ContainsWebUrls',
+        'contains_phone_numbers': 'ContainsPhoneNumbers',
+        'contains_email_addresses': 'ContainsEmailAddresses',
         'confidence_level': 'ConfidenceLevel',
-        'analysis_rationale': 'AnalysisRationale'
+        'analysis_rationale': 'AnalysisRationale',
+        'unsafe_urls': 'UnsafeUrls'
     }
 
-    def __init__(self, clean_result=None, phishing_risk_level=None, confidence_level=None, analysis_rationale=None):  # noqa: E501
+    def __init__(self, clean_result=None, contains_phishing=None, contains_unsolicited_sales=None, contains_promotional_content=None, contains_web_urls=None, contains_phone_numbers=None, contains_email_addresses=None, confidence_level=None, analysis_rationale=None, unsafe_urls=None):  # noqa: E501
         """PhishingDetectionAdvancedResponse - a model defined in Swagger"""  # noqa: E501
 
         self._clean_result = None
-        self._phishing_risk_level = None
+        self._contains_phishing = None
+        self._contains_unsolicited_sales = None
+        self._contains_promotional_content = None
+        self._contains_web_urls = None
+        self._contains_phone_numbers = None
+        self._contains_email_addresses = None
         self._confidence_level = None
         self._analysis_rationale = None
+        self._unsafe_urls = None
         self.discriminator = None
 
         if clean_result is not None:
             self.clean_result = clean_result
-        if phishing_risk_level is not None:
-            self.phishing_risk_level = phishing_risk_level
+        if contains_phishing is not None:
+            self.contains_phishing = contains_phishing
+        if contains_unsolicited_sales is not None:
+            self.contains_unsolicited_sales = contains_unsolicited_sales
+        if contains_promotional_content is not None:
+            self.contains_promotional_content = contains_promotional_content
+        if contains_web_urls is not None:
+            self.contains_web_urls = contains_web_urls
+        if contains_phone_numbers is not None:
+            self.contains_phone_numbers = contains_phone_numbers
+        if contains_email_addresses is not None:
+            self.contains_email_addresses = contains_email_addresses
         if confidence_level is not None:
             self.confidence_level = confidence_level
         if analysis_rationale is not None:
             self.analysis_rationale = analysis_rationale
+        if unsafe_urls is not None:
+            self.unsafe_urls = unsafe_urls
 
     @property
     def clean_result(self):
@@ -86,27 +116,142 @@ class PhishingDetectionAdvancedResponse(object):
         self._clean_result = clean_result
 
     @property
-    def phishing_risk_level(self):
-        """Gets the phishing_risk_level of this PhishingDetectionAdvancedResponse.  # noqa: E501
+    def contains_phishing(self):
+        """Gets the contains_phishing of this PhishingDetectionAdvancedResponse.  # noqa: E501
 
-        Overall phishing risk level between 0.0 and 1.0  # noqa: E501
+        True if the input text contains a phishing attempt, false otherwise  # noqa: E501
 
-        :return: The phishing_risk_level of this PhishingDetectionAdvancedResponse.  # noqa: E501
-        :rtype: float
+        :return: The contains_phishing of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :rtype: bool
         """
-        return self._phishing_risk_level
+        return self._contains_phishing
 
-    @phishing_risk_level.setter
-    def phishing_risk_level(self, phishing_risk_level):
-        """Sets the phishing_risk_level of this PhishingDetectionAdvancedResponse.
+    @contains_phishing.setter
+    def contains_phishing(self, contains_phishing):
+        """Sets the contains_phishing of this PhishingDetectionAdvancedResponse.
 
-        Overall phishing risk level between 0.0 and 1.0  # noqa: E501
+        True if the input text contains a phishing attempt, false otherwise  # noqa: E501
 
-        :param phishing_risk_level: The phishing_risk_level of this PhishingDetectionAdvancedResponse.  # noqa: E501
-        :type: float
+        :param contains_phishing: The contains_phishing of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :type: bool
         """
 
-        self._phishing_risk_level = phishing_risk_level
+        self._contains_phishing = contains_phishing
+
+    @property
+    def contains_unsolicited_sales(self):
+        """Gets the contains_unsolicited_sales of this PhishingDetectionAdvancedResponse.  # noqa: E501
+
+        True if the input text contains unsolicited sales, false otherwise  # noqa: E501
+
+        :return: The contains_unsolicited_sales of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._contains_unsolicited_sales
+
+    @contains_unsolicited_sales.setter
+    def contains_unsolicited_sales(self, contains_unsolicited_sales):
+        """Sets the contains_unsolicited_sales of this PhishingDetectionAdvancedResponse.
+
+        True if the input text contains unsolicited sales, false otherwise  # noqa: E501
+
+        :param contains_unsolicited_sales: The contains_unsolicited_sales of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._contains_unsolicited_sales = contains_unsolicited_sales
+
+    @property
+    def contains_promotional_content(self):
+        """Gets the contains_promotional_content of this PhishingDetectionAdvancedResponse.  # noqa: E501
+
+        True if the input text contains promotional content, false otherwise  # noqa: E501
+
+        :return: The contains_promotional_content of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._contains_promotional_content
+
+    @contains_promotional_content.setter
+    def contains_promotional_content(self, contains_promotional_content):
+        """Sets the contains_promotional_content of this PhishingDetectionAdvancedResponse.
+
+        True if the input text contains promotional content, false otherwise  # noqa: E501
+
+        :param contains_promotional_content: The contains_promotional_content of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._contains_promotional_content = contains_promotional_content
+
+    @property
+    def contains_web_urls(self):
+        """Gets the contains_web_urls of this PhishingDetectionAdvancedResponse.  # noqa: E501
+
+        True if the input text contains web URLs, including homoglyph URLs and spaced-out URL workarounds  # noqa: E501
+
+        :return: The contains_web_urls of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._contains_web_urls
+
+    @contains_web_urls.setter
+    def contains_web_urls(self, contains_web_urls):
+        """Sets the contains_web_urls of this PhishingDetectionAdvancedResponse.
+
+        True if the input text contains web URLs, including homoglyph URLs and spaced-out URL workarounds  # noqa: E501
+
+        :param contains_web_urls: The contains_web_urls of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._contains_web_urls = contains_web_urls
+
+    @property
+    def contains_phone_numbers(self):
+        """Gets the contains_phone_numbers of this PhishingDetectionAdvancedResponse.  # noqa: E501
+
+        True if the input text contains phone numbers, including homoglyph digits and spaced-out or spelled-out workarounds  # noqa: E501
+
+        :return: The contains_phone_numbers of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._contains_phone_numbers
+
+    @contains_phone_numbers.setter
+    def contains_phone_numbers(self, contains_phone_numbers):
+        """Sets the contains_phone_numbers of this PhishingDetectionAdvancedResponse.
+
+        True if the input text contains phone numbers, including homoglyph digits and spaced-out or spelled-out workarounds  # noqa: E501
+
+        :param contains_phone_numbers: The contains_phone_numbers of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._contains_phone_numbers = contains_phone_numbers
+
+    @property
+    def contains_email_addresses(self):
+        """Gets the contains_email_addresses of this PhishingDetectionAdvancedResponse.  # noqa: E501
+
+        True if the input text contains email addresses, including homoglyph characters and obfuscated workarounds  # noqa: E501
+
+        :return: The contains_email_addresses of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._contains_email_addresses
+
+    @contains_email_addresses.setter
+    def contains_email_addresses(self, contains_email_addresses):
+        """Sets the contains_email_addresses of this PhishingDetectionAdvancedResponse.
+
+        True if the input text contains email addresses, including homoglyph characters and obfuscated workarounds  # noqa: E501
+
+        :param contains_email_addresses: The contains_email_addresses of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._contains_email_addresses = contains_email_addresses
 
     @property
     def confidence_level(self):
@@ -153,6 +298,29 @@ class PhishingDetectionAdvancedResponse(object):
         """
 
         self._analysis_rationale = analysis_rationale
+
+    @property
+    def unsafe_urls(self):
+        """Gets the unsafe_urls of this PhishingDetectionAdvancedResponse.  # noqa: E501
+
+        URLs detected in the input text that were analyzed and found to be unsafe. Only populated when ProvideUrlAnalysis is true and URLs are detected.  # noqa: E501
+
+        :return: The unsafe_urls of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :rtype: list[UnsafeUrlResult]
+        """
+        return self._unsafe_urls
+
+    @unsafe_urls.setter
+    def unsafe_urls(self, unsafe_urls):
+        """Sets the unsafe_urls of this PhishingDetectionAdvancedResponse.
+
+        URLs detected in the input text that were analyzed and found to be unsafe. Only populated when ProvideUrlAnalysis is true and URLs are detected.  # noqa: E501
+
+        :param unsafe_urls: The unsafe_urls of this PhishingDetectionAdvancedResponse.  # noqa: E501
+        :type: list[UnsafeUrlResult]
+        """
+
+        self._unsafe_urls = unsafe_urls
 
     def to_dict(self):
         """Returns the model properties as a dict"""

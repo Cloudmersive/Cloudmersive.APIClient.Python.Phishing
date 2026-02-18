@@ -32,10 +32,16 @@ class PhishingDetectionAdvancedRequest(object):
     """
     swagger_types = {
         'input_string': 'str',
+        'text_type': 'str',
         'model': 'str',
+        'allow_unsolicited_sales': 'bool',
+        'allow_promotional_content': 'bool',
+        'allow_web_urls': 'bool',
+        'allow_phone_numbers': 'bool',
+        'allow_email_addresses': 'bool',
+        'provide_url_analysis': 'bool',
         'custom_policy_id': 'str',
         'provide_analysis_rationale': 'bool',
-        'text_type': 'str',
         'from_name': 'str',
         'to_name': 'str',
         'from_phone_number': 'str',
@@ -46,10 +52,16 @@ class PhishingDetectionAdvancedRequest(object):
 
     attribute_map = {
         'input_string': 'InputString',
+        'text_type': 'TextType',
         'model': 'Model',
+        'allow_unsolicited_sales': 'AllowUnsolicitedSales',
+        'allow_promotional_content': 'AllowPromotionalContent',
+        'allow_web_urls': 'AllowWebUrls',
+        'allow_phone_numbers': 'AllowPhoneNumbers',
+        'allow_email_addresses': 'AllowEmailAddresses',
+        'provide_url_analysis': 'ProvideUrlAnalysis',
         'custom_policy_id': 'CustomPolicyID',
         'provide_analysis_rationale': 'ProvideAnalysisRationale',
-        'text_type': 'TextType',
         'from_name': 'FromName',
         'to_name': 'ToName',
         'from_phone_number': 'FromPhoneNumber',
@@ -58,14 +70,20 @@ class PhishingDetectionAdvancedRequest(object):
         'to_email_address': 'ToEmailAddress'
     }
 
-    def __init__(self, input_string=None, model=None, custom_policy_id=None, provide_analysis_rationale=None, text_type=None, from_name=None, to_name=None, from_phone_number=None, to_phone_number=None, from_email_address=None, to_email_address=None):  # noqa: E501
+    def __init__(self, input_string=None, text_type=None, model=None, allow_unsolicited_sales=None, allow_promotional_content=None, allow_web_urls=None, allow_phone_numbers=None, allow_email_addresses=None, provide_url_analysis=None, custom_policy_id=None, provide_analysis_rationale=None, from_name=None, to_name=None, from_phone_number=None, to_phone_number=None, from_email_address=None, to_email_address=None):  # noqa: E501
         """PhishingDetectionAdvancedRequest - a model defined in Swagger"""  # noqa: E501
 
         self._input_string = None
+        self._text_type = None
         self._model = None
+        self._allow_unsolicited_sales = None
+        self._allow_promotional_content = None
+        self._allow_web_urls = None
+        self._allow_phone_numbers = None
+        self._allow_email_addresses = None
+        self._provide_url_analysis = None
         self._custom_policy_id = None
         self._provide_analysis_rationale = None
-        self._text_type = None
         self._from_name = None
         self._to_name = None
         self._from_phone_number = None
@@ -76,14 +94,26 @@ class PhishingDetectionAdvancedRequest(object):
 
         if input_string is not None:
             self.input_string = input_string
+        if text_type is not None:
+            self.text_type = text_type
         if model is not None:
             self.model = model
+        if allow_unsolicited_sales is not None:
+            self.allow_unsolicited_sales = allow_unsolicited_sales
+        if allow_promotional_content is not None:
+            self.allow_promotional_content = allow_promotional_content
+        if allow_web_urls is not None:
+            self.allow_web_urls = allow_web_urls
+        if allow_phone_numbers is not None:
+            self.allow_phone_numbers = allow_phone_numbers
+        if allow_email_addresses is not None:
+            self.allow_email_addresses = allow_email_addresses
+        if provide_url_analysis is not None:
+            self.provide_url_analysis = provide_url_analysis
         if custom_policy_id is not None:
             self.custom_policy_id = custom_policy_id
         if provide_analysis_rationale is not None:
             self.provide_analysis_rationale = provide_analysis_rationale
-        if text_type is not None:
-            self.text_type = text_type
         if from_name is not None:
             self.from_name = from_name
         if to_name is not None:
@@ -121,6 +151,29 @@ class PhishingDetectionAdvancedRequest(object):
         self._input_string = input_string
 
     @property
+    def text_type(self):
+        """Gets the text_type of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: Type of text being analyzed. Must be one of: \"TextMessage\", \"UserMessage\", \"SalesLead\", \"EmailMessage\", \"SupportCase\", \"AppMessage\", \"Other\".  # noqa: E501
+
+        :return: The text_type of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._text_type
+
+    @text_type.setter
+    def text_type(self, text_type):
+        """Sets the text_type of this PhishingDetectionAdvancedRequest.
+
+        Optional: Type of text being analyzed. Must be one of: \"TextMessage\", \"UserMessage\", \"SalesLead\", \"EmailMessage\", \"SupportCase\", \"AppMessage\", \"Other\".  # noqa: E501
+
+        :param text_type: The text_type of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._text_type = text_type
+
+    @property
     def model(self):
         """Gets the model of this PhishingDetectionAdvancedRequest.  # noqa: E501
 
@@ -142,6 +195,144 @@ class PhishingDetectionAdvancedRequest(object):
         """
 
         self._model = model
+
+    @property
+    def allow_unsolicited_sales(self):
+        """Gets the allow_unsolicited_sales of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: True if unsolicited sales should be allowed, false otherwise. Defaults to true.  # noqa: E501
+
+        :return: The allow_unsolicited_sales of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_unsolicited_sales
+
+    @allow_unsolicited_sales.setter
+    def allow_unsolicited_sales(self, allow_unsolicited_sales):
+        """Sets the allow_unsolicited_sales of this PhishingDetectionAdvancedRequest.
+
+        Optional: True if unsolicited sales should be allowed, false otherwise. Defaults to true.  # noqa: E501
+
+        :param allow_unsolicited_sales: The allow_unsolicited_sales of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_unsolicited_sales = allow_unsolicited_sales
+
+    @property
+    def allow_promotional_content(self):
+        """Gets the allow_promotional_content of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: True if promotional content should be allowed, false otherwise. Defaults to true.  # noqa: E501
+
+        :return: The allow_promotional_content of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_promotional_content
+
+    @allow_promotional_content.setter
+    def allow_promotional_content(self, allow_promotional_content):
+        """Sets the allow_promotional_content of this PhishingDetectionAdvancedRequest.
+
+        Optional: True if promotional content should be allowed, false otherwise. Defaults to true.  # noqa: E501
+
+        :param allow_promotional_content: The allow_promotional_content of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_promotional_content = allow_promotional_content
+
+    @property
+    def allow_web_urls(self):
+        """Gets the allow_web_urls of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: True if web URLs should be allowed in the input text, false otherwise. Defaults to true. When false, input containing URLs (including homoglyph URLs and spaced-out URLs) will be flagged as not clean.  # noqa: E501
+
+        :return: The allow_web_urls of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_web_urls
+
+    @allow_web_urls.setter
+    def allow_web_urls(self, allow_web_urls):
+        """Sets the allow_web_urls of this PhishingDetectionAdvancedRequest.
+
+        Optional: True if web URLs should be allowed in the input text, false otherwise. Defaults to true. When false, input containing URLs (including homoglyph URLs and spaced-out URLs) will be flagged as not clean.  # noqa: E501
+
+        :param allow_web_urls: The allow_web_urls of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_web_urls = allow_web_urls
+
+    @property
+    def allow_phone_numbers(self):
+        """Gets the allow_phone_numbers of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: True if phone numbers should be allowed in the input text, false otherwise. Defaults to true. When false, input containing phone numbers (including homoglyph digits and spaced-out or spelled-out workarounds) will be flagged as not clean.  # noqa: E501
+
+        :return: The allow_phone_numbers of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_phone_numbers
+
+    @allow_phone_numbers.setter
+    def allow_phone_numbers(self, allow_phone_numbers):
+        """Sets the allow_phone_numbers of this PhishingDetectionAdvancedRequest.
+
+        Optional: True if phone numbers should be allowed in the input text, false otherwise. Defaults to true. When false, input containing phone numbers (including homoglyph digits and spaced-out or spelled-out workarounds) will be flagged as not clean.  # noqa: E501
+
+        :param allow_phone_numbers: The allow_phone_numbers of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_phone_numbers = allow_phone_numbers
+
+    @property
+    def allow_email_addresses(self):
+        """Gets the allow_email_addresses of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: True if email addresses should be allowed in the input text, false otherwise. Defaults to true. When false, input containing email addresses (including homoglyph characters and obfuscated workarounds like \"danny at somedomaine [DOT] com\") will be flagged as not clean.  # noqa: E501
+
+        :return: The allow_email_addresses of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_email_addresses
+
+    @allow_email_addresses.setter
+    def allow_email_addresses(self, allow_email_addresses):
+        """Sets the allow_email_addresses of this PhishingDetectionAdvancedRequest.
+
+        Optional: True if email addresses should be allowed in the input text, false otherwise. Defaults to true. When false, input containing email addresses (including homoglyph characters and obfuscated workarounds like \"danny at somedomaine [DOT] com\") will be flagged as not clean.  # noqa: E501
+
+        :param allow_email_addresses: The allow_email_addresses of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_email_addresses = allow_email_addresses
+
+    @property
+    def provide_url_analysis(self):
+        """Gets the provide_url_analysis of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: True to perform deep URL analysis on any URLs detected in the text. When enabled, if the initial AI scan detects URLs, a second AI call enumerates them and each URL is individually analyzed for phishing. Defaults to true.  # noqa: E501
+
+        :return: The provide_url_analysis of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._provide_url_analysis
+
+    @provide_url_analysis.setter
+    def provide_url_analysis(self, provide_url_analysis):
+        """Sets the provide_url_analysis of this PhishingDetectionAdvancedRequest.
+
+        Optional: True to perform deep URL analysis on any URLs detected in the text. When enabled, if the initial AI scan detects URLs, a second AI call enumerates them and each URL is individually analyzed for phishing. Defaults to true.  # noqa: E501
+
+        :param provide_url_analysis: The provide_url_analysis of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._provide_url_analysis = provide_url_analysis
 
     @property
     def custom_policy_id(self):
@@ -188,29 +379,6 @@ class PhishingDetectionAdvancedRequest(object):
         """
 
         self._provide_analysis_rationale = provide_analysis_rationale
-
-    @property
-    def text_type(self):
-        """Gets the text_type of this PhishingDetectionAdvancedRequest.  # noqa: E501
-
-        Optional: Type of text being analyzed. Must be one of: \"Text Message\", \"User Message\", \"Sales Lead\", \"Email Message\", \"Support Case\", \"Other\".  # noqa: E501
-
-        :return: The text_type of this PhishingDetectionAdvancedRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._text_type
-
-    @text_type.setter
-    def text_type(self, text_type):
-        """Sets the text_type of this PhishingDetectionAdvancedRequest.
-
-        Optional: Type of text being analyzed. Must be one of: \"Text Message\", \"User Message\", \"Sales Lead\", \"Email Message\", \"Support Case\", \"Other\".  # noqa: E501
-
-        :param text_type: The text_type of this PhishingDetectionAdvancedRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._text_type = text_type
 
     @property
     def from_name(self):
