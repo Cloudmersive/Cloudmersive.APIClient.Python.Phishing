@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **to_phone_number** | **str** | Optional: Phone number of the recipient | [optional] 
 **from_email_address** | **str** | Optional: Email address of the sender | [optional] 
 **to_email_address** | **str** | Optional: Email address of the recipient | [optional] 
+**prior_history** | [**list[PriorHistoryItem]**](PriorHistoryItem.md) | Optional: Prior context history (e.g. message history) leading up to the current input string. If provided, the AI will take this history into account as context when evaluating the current input. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

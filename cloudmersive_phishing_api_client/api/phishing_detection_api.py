@@ -34,7 +34,7 @@ class PhishingDetectionApi(object):
         self.api_client = api_client
 
     def phishing_detect_email_advanced_post(self, **kwargs):  # noqa: E501
-        """Perform advanced AI phishing detection and classification against input email.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
+        """Perform advanced AI phishing detection and classification against input email.  Supports email input as a file (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) or as an HTML body string.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -55,7 +55,7 @@ class PhishingDetectionApi(object):
             return data
 
     def phishing_detect_email_advanced_post_with_http_info(self, **kwargs):  # noqa: E501
-        """Perform advanced AI phishing detection and classification against input email.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
+        """Perform advanced AI phishing detection and classification against input email.  Supports email input as a file (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) or as an HTML body string.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -127,7 +127,7 @@ class PhishingDetectionApi(object):
             collection_formats=collection_formats)
 
     def phishing_detect_file_advanced_post(self, **kwargs):  # noqa: E501
-        """Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
+        """Perform advanced AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -150,7 +150,7 @@ class PhishingDetectionApi(object):
             return data
 
     def phishing_detect_file_advanced_post_with_http_info(self, **kwargs):  # noqa: E501
-        """Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
+        """Perform advanced AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -228,7 +228,7 @@ class PhishingDetectionApi(object):
             collection_formats=collection_formats)
 
     def phishing_detect_file_post(self, **kwargs):  # noqa: E501
-        """Perform AI phishing detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  # noqa: E501
+        """Perform AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -250,7 +250,7 @@ class PhishingDetectionApi(object):
             return data
 
     def phishing_detect_file_post_with_http_info(self, **kwargs):  # noqa: E501
-        """Perform AI phishing detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  # noqa: E501
+        """Perform AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -325,7 +325,7 @@ class PhishingDetectionApi(object):
             collection_formats=collection_formats)
 
     def phishing_detect_text_string_advanced_post(self, **kwargs):  # noqa: E501
-        """Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
+        """Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -346,7 +346,7 @@ class PhishingDetectionApi(object):
             return data
 
     def phishing_detect_text_string_advanced_post_with_http_info(self, **kwargs):  # noqa: E501
-        """Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
+        """Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

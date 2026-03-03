@@ -47,7 +47,8 @@ class PhishingDetectionAdvancedRequest(object):
         'from_phone_number': 'str',
         'to_phone_number': 'str',
         'from_email_address': 'str',
-        'to_email_address': 'str'
+        'to_email_address': 'str',
+        'prior_history': 'list[PriorHistoryItem]'
     }
 
     attribute_map = {
@@ -67,10 +68,11 @@ class PhishingDetectionAdvancedRequest(object):
         'from_phone_number': 'FromPhoneNumber',
         'to_phone_number': 'ToPhoneNumber',
         'from_email_address': 'FromEmailAddress',
-        'to_email_address': 'ToEmailAddress'
+        'to_email_address': 'ToEmailAddress',
+        'prior_history': 'PriorHistory'
     }
 
-    def __init__(self, input_string=None, text_type=None, model=None, allow_unsolicited_sales=None, allow_promotional_content=None, allow_web_urls=None, allow_phone_numbers=None, allow_email_addresses=None, provide_url_analysis=None, custom_policy_id=None, provide_analysis_rationale=None, from_name=None, to_name=None, from_phone_number=None, to_phone_number=None, from_email_address=None, to_email_address=None):  # noqa: E501
+    def __init__(self, input_string=None, text_type=None, model=None, allow_unsolicited_sales=None, allow_promotional_content=None, allow_web_urls=None, allow_phone_numbers=None, allow_email_addresses=None, provide_url_analysis=None, custom_policy_id=None, provide_analysis_rationale=None, from_name=None, to_name=None, from_phone_number=None, to_phone_number=None, from_email_address=None, to_email_address=None, prior_history=None):  # noqa: E501
         """PhishingDetectionAdvancedRequest - a model defined in Swagger"""  # noqa: E501
 
         self._input_string = None
@@ -90,6 +92,7 @@ class PhishingDetectionAdvancedRequest(object):
         self._to_phone_number = None
         self._from_email_address = None
         self._to_email_address = None
+        self._prior_history = None
         self.discriminator = None
 
         if input_string is not None:
@@ -126,6 +129,8 @@ class PhishingDetectionAdvancedRequest(object):
             self.from_email_address = from_email_address
         if to_email_address is not None:
             self.to_email_address = to_email_address
+        if prior_history is not None:
+            self.prior_history = prior_history
 
     @property
     def input_string(self):
@@ -517,6 +522,29 @@ class PhishingDetectionAdvancedRequest(object):
         """
 
         self._to_email_address = to_email_address
+
+    @property
+    def prior_history(self):
+        """Gets the prior_history of this PhishingDetectionAdvancedRequest.  # noqa: E501
+
+        Optional: Prior context history (e.g. message history) leading up to the current input string. If provided, the AI will take this history into account as context when evaluating the current input.  # noqa: E501
+
+        :return: The prior_history of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :rtype: list[PriorHistoryItem]
+        """
+        return self._prior_history
+
+    @prior_history.setter
+    def prior_history(self, prior_history):
+        """Sets the prior_history of this PhishingDetectionAdvancedRequest.
+
+        Optional: Prior context history (e.g. message history) leading up to the current input string. If provided, the AI will take this history into account as context when evaluating the current input.  # noqa: E501
+
+        :param prior_history: The prior_history of this PhishingDetectionAdvancedRequest.  # noqa: E501
+        :type: list[PriorHistoryItem]
+        """
+
+        self._prior_history = prior_history
 
     def to_dict(self):
         """Returns the model properties as a dict"""

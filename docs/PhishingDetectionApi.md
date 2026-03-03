@@ -4,10 +4,10 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**phishing_detect_email_advanced_post**](PhishingDetectionApi.md#phishing_detect_email_advanced_post) | **POST** /phishing/detect/email/advanced | Perform advanced AI phishing detection and classification against input email.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
-[**phishing_detect_file_advanced_post**](PhishingDetectionApi.md#phishing_detect_file_advanced_post) | **POST** /phishing/detect/file/advanced | Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
-[**phishing_detect_file_post**](PhishingDetectionApi.md#phishing_detect_file_post) | **POST** /phishing/detect/file | Perform AI phishing detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
-[**phishing_detect_text_string_advanced_post**](PhishingDetectionApi.md#phishing_detect_text_string_advanced_post) | **POST** /phishing/detect/text-string/advanced | Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+[**phishing_detect_email_advanced_post**](PhishingDetectionApi.md#phishing_detect_email_advanced_post) | **POST** /phishing/detect/email/advanced | Perform advanced AI phishing detection and classification against input email.  Supports email input as a file (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) or as an HTML body string.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+[**phishing_detect_file_advanced_post**](PhishingDetectionApi.md#phishing_detect_file_advanced_post) | **POST** /phishing/detect/file/advanced | Perform advanced AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+[**phishing_detect_file_post**](PhishingDetectionApi.md#phishing_detect_file_post) | **POST** /phishing/detect/file | Perform AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+[**phishing_detect_text_string_advanced_post**](PhishingDetectionApi.md#phishing_detect_text_string_advanced_post) | **POST** /phishing/detect/text-string/advanced | Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
 [**phishing_detect_text_string_post**](PhishingDetectionApi.md#phishing_detect_text_string_post) | **POST** /phishing/detect/text-string | Perform AI phishing detection against input text string.  Returns a clean/not-clean result with confidence level and optional rationale.
 [**phishing_detect_url_advanced_post**](PhishingDetectionApi.md#phishing_detect_url_advanced_post) | **POST** /phishing/detect/url/advanced | Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls.
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 # **phishing_detect_email_advanced_post**
 > PhishingDetectionEmailAdvancedResponse phishing_detect_email_advanced_post(body=body)
 
-Perform advanced AI phishing detection and classification against input email.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+Perform advanced AI phishing detection and classification against input email.  Supports email input as a file (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) or as an HTML body string.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
 
 ### Example
 ```python
@@ -36,7 +36,7 @@ api_instance = cloudmersive_phishing_api_client.PhishingDetectionApi(cloudmersiv
 body = cloudmersive_phishing_api_client.AdvancedEmailDetectionRequest() # AdvancedEmailDetectionRequest | Phishing detection request (optional)
 
 try:
-    # Perform advanced AI phishing detection and classification against input email.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+    # Perform advanced AI phishing detection and classification against input email.  Supports email input as a file (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) or as an HTML body string.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
     api_response = api_instance.phishing_detect_email_advanced_post(body=body)
     pprint(api_response)
 except ApiException as e:
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 # **phishing_detect_file_advanced_post**
 > PhishingDetectionAdvancedResponse phishing_detect_file_advanced_post(model=model, custom_policy_id=custom_policy_id, input_file=input_file)
 
-Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+Perform advanced AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
 
 ### Example
 ```python
@@ -90,7 +90,7 @@ custom_policy_id = 'custom_policy_id_example' # str |  (optional)
 input_file = '/path/to/file.txt' # file |  (optional)
 
 try:
-    # Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+    # Perform advanced AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
     api_response = api_instance.phishing_detect_file_advanced_post(model=model, custom_policy_id=custom_policy_id, input_file=input_file)
     pprint(api_response)
 except ApiException as e:
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 # **phishing_detect_file_post**
 > PhishingDetectionResponse phishing_detect_file_post(model=model, input_file=input_file)
 
-Perform AI phishing detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+Perform AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
 
 ### Example
 ```python
@@ -145,7 +145,7 @@ model = 'Advanced' # str | Model to use; default setting is Advanced (optional) 
 input_file = '/path/to/file.txt' # file |  (optional)
 
 try:
-    # Perform AI phishing detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+    # Perform AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
     api_response = api_instance.phishing_detect_file_post(model=model, input_file=input_file)
     pprint(api_response)
 except ApiException as e:
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 # **phishing_detect_text_string_advanced_post**
 > PhishingDetectionAdvancedResponse phishing_detect_text_string_advanced_post(body=body)
 
-Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
 
 ### Example
 ```python
@@ -198,7 +198,7 @@ api_instance = cloudmersive_phishing_api_client.PhishingDetectionApi(cloudmersiv
 body = cloudmersive_phishing_api_client.PhishingDetectionAdvancedRequest() # PhishingDetectionAdvancedRequest | Phishing detection request (optional)
 
 try:
-    # Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+    # Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
     api_response = api_instance.phishing_detect_text_string_advanced_post(body=body)
     pprint(api_response)
 except ApiException as e:
